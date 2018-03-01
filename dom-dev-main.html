@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Justice League</title>
+	<!-- 
+	<script src="babel-standalone.js"></script>
+	babel standalone loads OK, but cannot load the .js script files -- due to cross-origin protocol restrictions.
+	https://www.chromium.org/for-testers/bug-reporting-guidelines/uncaught-securityerror-failed-to-read-the-localstorage-property-from-window-access-is-denied-for-this-document
+	
+	-->
+	<script>
+		document.onclick = function (){ 
+		document.getElementById("output").innerHTML = '<p>Click text to call a Hero</p>';
+			//alert('Click text to call a Hero'); 
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1 id='title' id='responder'>Justice League</h1>
+	</header>
+	<!-- NOTE
+		If 3rd party cookies are disabled in Chrome,
+		localStorage access is denied. 
+	
+		Add new JLA member in <li> as below 
+		if NO case entry in dom-dev-function.js
+		the default case will display "Unknown super entity"
+		code will work w/o error
+	-->
+	<div id='jlamenu' class='small'>
+	<ul id='roster'>
+		<li id='clark' class='hero'>Superman</li>
+		<li id='bruce' class='vigilante hero' id='bats'>Batman</li>
+		<li id='haljordan' class='hero'>Green Lantern</li>
+		<li id='diana' class='hero'>Wonder Woman</li>
+		<li id='aquaman' class='hero'>Aquaman</li>
+		<li id='flash' class='hero'>Flash</li>
+	</ul>
+	</div>
+	
+	<div id='output' class='normal'>
+		<!-- display HTML in element 'output'-->
+	
+	</div>
+
+	
+	<!-- ES5 must load function script first / not using ES6 modules 
+	1-Mar-2018 - Added babel standalone - test if ES6 module syntax can be used.
+	-- Cross-origin protocl restrictions require supported  protocol schemes: http, data, chrome, chrome-extension, https.
+	-- FIX - remove type='text/babel' from script elements
+	-- Explore babel HTML implementation another time.
+	Call these files via http from S3 or as data- elements.
+	-->
+	<script src='dom-const-msg.js'></script>
+	<script src='dom-dev-function.js'></script>
+	<script src='dom-dev-main-su.js'></script>
+	
+<style type="text/css">
+/* 
+	these scripts are adopted from another project; used here w/o much planning or design, i.e. thrown against the wall to see if it takes
+*/
+.pull-left { /* pull-left class referred and given attributes */
+float: left !important;
+}
+.pull-right { /* pull-right class referred and given attributes */
+float: right !important;
+}
+.small { /* small class referred and given sizing attributes */
+font-size: 1em;
+padding: 0.2em;
+width: 50%;
+height: 50%;
+}
+.normal { /* normal class referred and given sizing attributes */
+font-size: 1.5em;
+padding: 0.4em;
+width: 100%;
+height: 100%;
+}
+.large { /* large class referred and given sizing attributes */
+font-size: 2em;
+padding: 0.6em;
+width: 150%;
+height: 150%;
+}
+.button { /* refers to a button class, given several attributes */
+border: 0.1em solid;
+border-radius: 0.3em;
+width: 5em;
+height: 2em;
+line-height: 2em;
+margin-top: 5em;
+margin-bottom: 2em;
+}
+.menu li { /* refers to a menu class, given several attributes */
+display: inline;
+padding-right: 1em;
+text-decoration: none;
+}
+.menu {
+margin-bottom: 2em; /* just a margin for better view of the elements */
+}
+.rectangular { /* refers to a rectangular class, given several attributes ←-
+*/
+border: 0.1em solid;
+width: 10em;
+height: 5em;
+line-height: 5em;
+margin-bottom: 2em;
+}
+</style>
+	
+</body>
+</html>
