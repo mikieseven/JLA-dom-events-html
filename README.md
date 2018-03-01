@@ -3,7 +3,8 @@
 
 root html: dom-dev-main.html -- supporting .js files are loaded by the .html file from the root folder
 
-This app uses localStorage (experimenting with the HTML5 API)
+This app uses localStorage (HTML5 API) whose access is affected by privacy settings and extensions.
+
 NOTE: HTML5 API - this code uses the localStorage API. In Chrome, cross-site-scripting has protocol requirements that affect code execution (yeah duh) however, some extensions and privacy settings will affect access to localStorage; I found that disabling 3rd party cookies will cause the localStorage Access Denied error.
 
 A resource from Chromium:
