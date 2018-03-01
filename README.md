@@ -1,7 +1,7 @@
 # JLA-dom-events-html
-"This is a fun little exercise reading and setting HTML elements via javascript and using element event clicks to display text in the html <div>
+"This fun little exercise reads elements and sets HTML content via javascript, using element event clicks to display text in the html element.
 
-root html: dom-dev-main.html -- supporting .js files are loaded by .html file from the root folder
+root html: dom-dev-main.html -- supporting .js files are loaded by the .html file from the root folder
 
 This app uses localStorage (experimenting with the HTML5 API)
 NOTE: HTML5 API - this code uses the localStorage API. In Chrome, cross-site-scripting has protocol requirements that affect code execution (yeah duh) however, some extensions and privacy settings will affect access to localStorage; I found that disabling 3rd party cookies will cause the localStorage Access Denied error.
